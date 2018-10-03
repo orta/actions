@@ -32,6 +32,7 @@ action "Echo" {
   // uses = "danger/danger-js"
   uses = "./danger-js"
   args = "--dangerfile periltest/settings@org/logStuff.ts"
+  secrets = ["GITHUB_TOKEN"]
   // args = "--dangerfile artsy/peril-settings@org/markAsMergeOnGreen.ts"
 }
 
