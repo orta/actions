@@ -8,4 +8,4 @@ Currently:
 TODO:
 
 - On a green status, merge if the label applies - [src](https://github.com/artsy/peril-settings/blob/master/org/mergeOnGreen.ts)
-- Get danger-swift working
+- Get danger-swift working OK!
