@@ -7,4 +7,4 @@ LABEL "com.github.actions.description"="write arguments to the standard output"
 LABEL "com.github.actions.icon"="mic"
 LABEL "com.github.actions.color"="blue"
 
-ENTRYPOINT ["npx", "--package", "danger-npx", "danger", "ci"]
+ENTRYPOINT ["npx", "--package", "danger", "--package","typescript", "--package", "@babel/cli", "danger", "ci"]
