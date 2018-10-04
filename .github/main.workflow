@@ -69,10 +69,13 @@ workflow "Merge on Green" {
 }
 
 action "Detect" {
-  args = "--dangerfile periltest/settings/logStuff.ts"
+  args = "--dangerfile periltest/org/markAsMergeOnGreen.ts"
   secrets = ["GITHUB_TOKEN"]
   uses = "./danger-js"
-}// workflow "Set Up Merge On Green" {
+}
+
+
+// workflow "Set Up Merge On Green" {
 //   on = "issue_comment"
 //   resolves = "listen for merge on green"
 // }
