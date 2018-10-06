@@ -7,4 +7,4 @@ LABEL "com.github.actions.description"="Runs JavaScript/TypeScript Dangerfiles"
 LABEL "com.github.actions.icon"="zap"
 LABEL "com.github.actions.color"="blue"
 
-ENTRYPOINT ["npx", "--package", "danger", "--package","typescript", "--package", "@babel/cli", "danger", "ci"]
+ENTRYPOINT ["npx", "--package", "danger@beta", "--package","typescript", "--package", "@babel/cli", "danger", "ci"]

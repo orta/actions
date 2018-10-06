@@ -16,4 +16,4 @@ RUN git clone https://github.com/danger/danger-swift.git _danger-swift
 RUN cd _danger-swift && make install
 
 # Run Danger Swift via Danger JS, allowing for custom args
-ENTRYPOINT ["npx", "--package", "danger", "danger", "process", "danger-swift"]
+ENTRYPOINT ["npx", "--package", "danger@beta", "danger", "process", "danger-swift"]
