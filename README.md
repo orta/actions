@@ -1,5 +1,7 @@
 # actions
 
+Things using GitHub actions
+
 Currently:
 
 - PRs get a Danger JS run
@@ -9,3 +11,4 @@ TODO:
 
 - On a green status, merge if the label applies - [src](https://github.com/artsy/peril-settings/blob/master/org/mergeOnGreen.ts)
 - Get danger-swift working
+
