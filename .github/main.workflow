@@ -31,7 +31,7 @@ workflow "Merge on Green" {
 }
 
 action "Detect a Merge on Green" {
-  args = "--dangerfile periltest/org/markAsMergeOnGreen.ts"
+  args = "--dangerfile artsy/peril-settings/org/markAsMergeOnGreen.ts"
   uses = "./danger-js"
   secrets = ["GITHUB_TOKEN"]
   env = {
