@@ -11,10 +11,9 @@ LABEL "com.github.actions.color"="blue"
 RUN curl -sL https://deb.nodesource.com/setup_10.x |  bash -
 RUN apt-get install -y nodejs
 
-
 # Install danger-swift globally
 RUN git clone https://github.com/danger/danger-swift.git _danger-swift
 RUN cd _danger-swift && make install
 
 # Run Danger Swift via Danger JS, allowing for custom args
-ENTRYPOINT ["npx", "--package", "danger",  "process", "danger-swift"]
+ENTRYPOINT ["npx", "--package", "danger", "danger", "process", "danger-swift"]
