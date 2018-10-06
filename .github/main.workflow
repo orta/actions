@@ -6,6 +6,9 @@ workflow "Dangerfile Swift Eval" {
 action "Danger Swift" {
   // uses = "danger/danger-js"
   uses = "./danger-swift"
+  env = {
+    DEBUG = "*"
+  }
 
   // args = "--dangerfile periltest/settings/logStuff.ts"
 
