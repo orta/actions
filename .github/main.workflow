@@ -9,12 +9,6 @@ action "Danger Swift" {
   env = {
     DEBUG = "*"
   }
-
-  // args = "--dangerfile periltest/settings/logStuff.ts"
-
-  // env = {
-  //   DEBUG = "*"
-  // }
 }
 
 workflow "Dangerfile Eval" {
@@ -33,20 +27,14 @@ action "Danger JS" {
 
 workflow "Merge on Green" {
   on = "issue_comment"
-  resolves = ["Detect"]
+  resolves = ["Detect a Merge on Green"]   
 }
 
-action "Detect" {
+action "Detect a Merge on Green" {
   args = "--dangerfile periltest/org/markAsMergeOnGreen.ts"
   uses = "./danger-js"
   secrets = ["GITHUB_TOKEN"]
   env = {
     DEBUG = "*"
   }
-
-  // args = "--dangerfile periltest/settings/logStuff.ts"
-
-  // env = {
-  //   DEBUG = "*"
-  // }
 }
