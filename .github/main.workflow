@@ -8,9 +8,9 @@ action "Danger Swift" {
   uses = "./danger-swift"
   // args = "--dangerfile periltest/settings/logStuff.ts"
   secrets = ["GITHUB_TOKEN"]
-  env = {
-    DEBUG = "*"
-  }
+  // env = {
+  //   DEBUG = "*"
+  // }
 }
 
 workflow "Dangerfile Eval" {
