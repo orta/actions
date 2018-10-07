@@ -36,9 +36,6 @@ action "Detect a Merge on Green" {
   secrets = ["GITHUB_TOKEN"]
   env = {
     DEBUG = "*"
-    FILEPATH = "hello.md"
-    REPOS = "orta/electronvolt"
-    MERGE_BRANCH = "master"
   }
 }
 
@@ -54,5 +51,8 @@ action "Sync workflows across many repos" {
   secrets = ["GITHUB_TOKEN"]
   env = {
     DEBUG = "*"
+    FILEPATH = "hello.md"
+    REPOS = "orta/electronvolt"
+    MERGE_BRANCH = "master"
   }
 }
