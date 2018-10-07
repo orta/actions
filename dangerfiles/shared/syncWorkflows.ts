@@ -14,7 +14,7 @@ export default async (push:Push) => {
   const coreRepos = ["orta/actions2"]
 
   const workflowPath = ".github/main.workflow"
-  const currentWorkflowContent =  await danger.github.utils.fileContents(workflowPath, thisRepo, push.ref)
+  const currentWorkflowContent =  await danger.github.utils.fileContents(workflowPath, thisRepo, "master")
   for (const fullRepo of coreRepos) {
     const owner = fullRepo.split("/")[0]
     const repo = fullRepo.split("/")[1]
