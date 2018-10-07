@@ -5,6 +5,8 @@ import {Push} from "github-webhook-event-types"
 // probably env vars
 
 export default async (push:Push) => {
+  console.log(JSON.stringify(push, null, 2))
+
   // Bail early on non-master merges
   if (push.ref !== "master") {
     return 
@@ -16,12 +18,15 @@ export default async (push:Push) => {
   const workflowPath = ".github/main.workflow"
   const currentWorkflowContent =  await danger.github.utils.fileContents(workflowPath, thisRepo, push.ref)
 
+  console.log(`For ${thisRepo}: \n${currentWorkflowContent}`)
   for (const fullRepo of coreRepos) {
     const owner = fullRepo.split("/")[0]
     const repo = fullRepo.split("/")[1]
 
     // Grab the repo's workflow
     const repoWorkflowContent =  await danger.github.utils.fileContents(workflowPath, fullRepo)
+    console.log(`For ${fullRepo}: \n${repoWorkflowContent}`)
+
     if (currentWorkflowContent === repoWorkflowContent) {
       continue
     }
