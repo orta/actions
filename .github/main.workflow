@@ -45,7 +45,7 @@ workflow "Sync Workflows" {
 }
 
 action "Sync workflows across many repos" {
-  uses = "orta/actions/danger-swift@01fb369"
+  uses = "orta/actions/danger-js@"
   args = "--dangerfile orta/actions/dangerfiles/shared/syncWorkflows.ts"
   secrets = ["GITHUB_TOKEN"]
 }
