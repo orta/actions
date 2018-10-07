@@ -15,7 +15,7 @@ export default async (push:Push) => {
 
   const workflowPath = ".github/main.workflow"
   const currentWorkflowContent =  await danger.github.utils.fileContents(workflowPath, thisRepo, push.ref)
-
+  console.log("> " + currentWorkflowContent)
   for (const fullRepo of coreRepos) {
     const owner = fullRepo.split("/")[0]
     const repo = fullRepo.split("/")[1]
