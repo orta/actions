@@ -21,26 +21,45 @@ export default async (push:Push) => {
     
     // Grab the repo's workflow
     const repoWorkflowContent =  await danger.github.utils.fileContents(workflowPath, fullRepo)
-    console.log("> " + repoWorkflowContent)
     if (currentWorkflowContent === repoWorkflowContent) {
       continue
     }
 
+    // // Make set of FS changes as an object
+    // const newFileMap: any = {}
+    // newFileMap[workflowPath] = currentWorkflowContent
+
+    // // Creates a new branch called `update_workflow`, from `master`. Creates a commit with
+    // // the changes above and the message "Sets up ...". Then sends a PR to `orta/actions`
+    // // with the title "Update to the GitHub ..." and the body "The main workflow file ...".
+    // await danger.github.utils.createOrUpdatePR(
+    //   {
+    //     title: "Update to the GitHub Workflow file",
+    //     body: `The main workflow file in ${thisRepo} was updated, this auto-generated PR moves the changes over.`,
+    //     owner,
+    //     repo,
+    //     baseBranch: "master",
+    //     newBranchName: "update_workflow",
+    //     commitMessage: `Migrates the changes from ${thisRepo}`,
+    //   },
+    //   newFileMap
+    // )
+
     // Make set of FS changes as an object
     const newFileMap: any = {}
-    newFileMap[workflowPath] = currentWorkflowContent
+    newFileMap[".github/thingy"] = "{}"
 
     // Creates a new branch called `update_workflow`, from `master`. Creates a commit with
     // the changes above and the message "Sets up ...". Then sends a PR to `orta/actions`
     // with the title "Update to the GitHub ..." and the body "The main workflow file ...".
     await danger.github.utils.createOrUpdatePR(
       {
-        title: "Update to the GitHub Workflow frile",
-        body: `The main workflow file in ${thisRepo} was updated, this auto-generated PR moves the changes over.`,
-        owner,
-        repo,
+        title: "Update to the [x] file",
+        body: `The file in ${thisRepo} was updated, this auto-generated PR moves the changes over.`,
+        owner: "orta",
+        repo: "actions",
         baseBranch: "master",
-        newBranchName: "update_workflow",
+        newBranchName: "update_file",
         commitMessage: `Migrates the changes from ${thisRepo}`,
       },
       newFileMap
