@@ -36,7 +36,7 @@ export default async (push:Push) => {
     await danger.github.utils.createOrUpdatePR(
       {
         title: "Update to the GitHub Workflow frile",
-        body: `The main workflow file in ${thisRepo} was updated, this auot-generated PR moves the changes over.`,
+        body: `The main workflow file in ${thisRepo} was updated, this auto-generated PR moves the changes over.`,
         owner,
         repo,
         baseBranch: "master",
