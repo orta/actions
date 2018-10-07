@@ -8,7 +8,7 @@ export default async (push:Push) => {
   console.log(JSON.stringify(push, null, 2))
 
   // Bail early on non-master merges
-  if (push.ref !== "master") {
+  if (push.ref !== "refs/heads/master") {
     return 
   }
   
