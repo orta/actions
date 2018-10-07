@@ -36,6 +36,9 @@ action "Detect a Merge on Green" {
   secrets = ["GITHUB_TOKEN"]
   env = {
     DEBUG = "*"
+    FILEPATH = "hello.md"
+    REPOS = "orta/electronvolt"
+    MERGE_BRANCH = "master"
   }
 }
 
