@@ -27,7 +27,7 @@ action "Danger JS" {
 
 workflow "Merge on Green" {
   on = "issue_comment"
-  resolves = ["Detect a Merge on Green"]   
+  resolves = ["Detect a Merge on Green"]
 }
 
 action "Detect a Merge on Green" {
@@ -37,4 +37,15 @@ action "Detect a Merge on Green" {
   env = {
     DEBUG = "*"
   }
+}
+
+workflow "Sync Workflows" {
+  on = "push"
+  resolves = ["Sync workflows across many repos"]
+}
+
+action "Sync workflows across many repos" {
+  uses = "orta/actions/danger-swift@01fb369"
+  args = "--dangerfile orta/actions/dangerfiles/shared/syncWorkflows.ts"
+  secrets = ["GITHUB_TOKEN"]
 }
