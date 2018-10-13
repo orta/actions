@@ -12,16 +12,16 @@ action "Detect a Merge on Green" {
 
 // This works with CI providers 
 
-// workflow "Merge on Green" {
-//   on = "status"
-//   resolves = ["Look for Green Statuses"]
-// }
+workflow "Merge on Green" {
+  on = "status"
+  resolves = ["Look for Green Statuses"]
+}
 
-// action "Look for Green Statuses" {
-//   args = "--dangerfile artsy/peril-settings/org/mergeOnGreen.ts"
-//   uses = "./danger-js"
-//   secrets = ["GITHUB_TOKEN"]
-// }
+action "Look for Green Statuses" {
+  args = "--dangerfile artsy/peril-settings/org/mergeOnGreen.ts"
+  uses = "./danger-js"
+  secrets = ["GITHUB_TOKEN"]
+}
 
 
 // This works with checks only 
