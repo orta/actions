@@ -13,8 +13,10 @@ action "Detect a Merge on Green" {
 // This works with CI providers etc
 
 workflow "Merge on Green (status)" {
-  on = "status"
   resolves = ["Look for Green Statuses"]
+  on = "status"
+
+  // This works with CI providers etc
 }
 
 action "Look for Green Statuses" {
@@ -23,12 +25,15 @@ action "Look for Green Statuses" {
   secrets = ["GITHUB_TOKEN"]
 }
 
-
 // This works with checks only 
 
 workflow "Merge on Green" {
-  on = "check_suite"
   resolves = ["Look for Green Check Runs"]
+  on = "check_suite"
+
+  // This works with CI providers etc
+
+  // This works with checks only 
 }
 
 action "Look for Green Check Runs" {
@@ -36,7 +41,6 @@ action "Look for Green Check Runs" {
   uses = "./danger-js"
   secrets = ["GITHUB_TOKEN"]
 }
-
 
 // Adds Danger JS so that something can be green
 
