@@ -2,7 +2,7 @@
 
 Currently:
 
-- PRs get a Danger JS run
+- PRs get a [Danger JS run](https://github.com/orta/actions/blob/master/.github/danger-js.workflow)
 - Get danger-swift working (kinda blocked on danger-js work, but the whole swift/process stuff works)
 - Issue comments can trigger adding the label "merge on green" - [src](https://github.com/artsy/peril-settings/blob/master/org/markAsMergeOnGreen.ts)
 
