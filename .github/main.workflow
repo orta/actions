@@ -1,4 +1,4 @@
-// Adds the 
+// Adds the detection via issue comments
 workflow "Detect 'Merge on Green' messages" {
   on = "issue_comment"
   resolves = ["Detect a Merge on Green"]
@@ -10,9 +10,9 @@ action "Detect a Merge on Green" {
   secrets = ["GITHUB_TOKEN"]
 }
 
-// This works with CI providers 
+// This works with CI providers etc
 
-workflow "Merge on Green" {
+workflow "Merge on Green (status)" {
   on = "status"
   resolves = ["Look for Green Statuses"]
 }
