@@ -5,9 +5,9 @@ workflow "Dangerfile JS Eval" {
   resolves = "Danger JS"
 }
 
-action "Danger Swift" {
+action "Danger JS" {
   // uses = "danger/danger-swift"
-  uses = "./danger-swift"
+  uses = "./danger-js"
   env = {
     DEBUG = "*"
   }
