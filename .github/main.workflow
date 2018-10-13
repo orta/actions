@@ -12,10 +12,10 @@ action "Detect a Merge on Green" {
 
 workflow "Merge on Green" {
   on = "status"
-  resolves = ["Merge on Green"]
+  resolves = ["Look for Green Statuses"]
 }
 
-action "Merge on Green" {
+action "Look for Green Statuses" {
   args = "--dangerfile artsy/peril-settings/org/mergeOnGreen.ts"
   uses = "./danger-js"
   secrets = ["GITHUB_TOKEN"]
