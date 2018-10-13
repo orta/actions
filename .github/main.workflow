@@ -1,4 +1,4 @@
-// Adds the 
+// Adds the detection via issue comments
 workflow "Detect 'Merge on Green' messages" {
   on = "issue_comment"
   resolves = ["Detect a Merge on Green"]
@@ -10,18 +10,18 @@ action "Detect a Merge on Green" {
   secrets = ["GITHUB_TOKEN"]
 }
 
-// This works with CI providers 
+// This works with CI providers etc
 
-// workflow "Merge on Green" {
-//   on = "status"
-//   resolves = ["Look for Green Statuses"]
-// }
+workflow "Merge on Green (status)" {
+  on = "status"
+  resolves = ["Look for Green Statuses"]
+}
 
-// action "Look for Green Statuses" {
-//   args = "--dangerfile artsy/peril-settings/org/mergeOnGreen.ts"
-//   uses = "./danger-js"
-//   secrets = ["GITHUB_TOKEN"]
-// }
+action "Look for Green Statuses" {
+  args = "--dangerfile artsy/peril-settings/org/mergeOnGreen.ts"
+  uses = "./danger-js"
+  secrets = ["GITHUB_TOKEN"]
+}
 
 
 // This works with checks only 
