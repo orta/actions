@@ -34,25 +34,33 @@ action "Detect a Merge on Green" {
   args = "--dangerfile artsy/peril-settings/org/markAsMergeOnGreen.ts"
   uses = "./danger-js"
   secrets = ["GITHUB_TOKEN"]
-  env = {
-    DEBUG = "*"
-  }
 }
 
-workflow "Sync Workflows" {
-  on = "push"
-  resolves = ["Sync workflows across many repos"]
+workflow "Merge on Status Green" {
+  on = "status"
+  resolves = ["Merge when Green"]
 }
 
-action "Sync workflows across many repos" {
-  // uses = "orta/actions/danger-js"
+action "Merge when Green" {
+  args = "--dangerfile artsy/peril-settings/org/mergeOnGreen.ts"
   uses = "./danger-js"
-  args = "--dangerfile orta/actions/dangerfiles/shared/syncWorkflows.ts"
   secrets = ["GITHUB_TOKEN"]
-  env = {
-    DEBUG = "*"
-    FILEPATH = "hello.md"
-    REPOS = "orta/electronvolt"
-    MERGE_BRANCH = "master"
-  }
 }
+
+// workflow "Sync Workflows" {
+//   on = "push"
+//   resolves = ["Sync workflows across many repos"]
+// }
+
+// action "Sync workflows across many repos" {
+//   // uses = "orta/actions/danger-js"
+//   uses = "./danger-js"
+//   args = "--dangerfile orta/actions/dangerfiles/shared/syncWorkflows.ts"
+//   secrets = ["GITHUB_TOKEN"]
+//   env = {
+//     DEBUG = "*"
+//     FILEPATH = "hello.md"
+//     REPOS = "orta/electronvolt"
+//     MERGE_BRANCH = "master"
+//   }
+// }
