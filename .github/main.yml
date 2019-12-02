@@ -1,7 +1,7 @@
 name: Build Website
 
 on:
-  issues
+  [issues, pull_requests]
 
 jobs:
   build:
