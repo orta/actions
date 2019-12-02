@@ -1,7 +1,7 @@
 name: Build Website
 
 on:
-  issue
+  issues
 
 jobs:
   build:
